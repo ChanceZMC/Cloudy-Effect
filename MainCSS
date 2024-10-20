@@ -1,0 +1,87 @@
+/* Shaping For Clouds */
+body {
+    margin: 0;
+    padding: 0;
+    background: #87CEEB; /* Light sky blue background */
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+}
+
+/* Cloud Container */
+.clouds {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Send the clouds behind all content */
+    overflow: hidden;
+}
+
+/* Individual Cloud Call + Random Positioning */
+.cloud {
+    position: absolute;
+    background: #ffffff;
+    background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: moveClouds linear infinite;
+}
+
+.cloud1 {
+    width: 200px;
+    height: 100px;
+    top: 20%;
+    left: -200px;
+    animation-duration: 60s;
+}
+
+.cloud2 {
+    width: 300px;
+    height: 150px;
+    top: 40%;
+    left: -300px;
+    animation-duration: 90s;
+}
+
+.cloud3 {
+    width: 250px;
+    height: 125px;
+    top: 60%;
+    left: -250px;
+    animation-duration: 75s;
+}
+
+.cloud4 {
+    width: 350px;
+    height: 175px;
+    top: 30%;
+    left: -350px;
+    animation-duration: 100s;
+}
+
+.cloud5 {
+    width: 400px;
+    height: 200px;
+    top: 50%;
+    left: -400px;
+    animation-duration: 120s;
+}
+
+/* Cloud Movement */
+@keyframes moveClouds {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(110vw); /* Move clouds across the entire viewport */
+    }
+}
+
+/* Responsive Shaping For Clouds */
+@media (min-width: 768px) {
+    .cloud {
+        opacity: 0.9;
+    }
+}
